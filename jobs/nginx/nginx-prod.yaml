@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/monish-devendran/argo-cd.git
+    targetRevision: HEAD #we can use brancher etc..., i pointing to latest commit
+    path: apps/nginx
+  destination:
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: flase
+    syncOptions:
+      - Validate=true
