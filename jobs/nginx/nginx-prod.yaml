@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/monish-devendran/argo-cd.git
     targetRevision: HEAD #we can use brancher etc..., i pointing to latest commit
-    path: apps/nginx
+    path: apps/nginx-2
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
