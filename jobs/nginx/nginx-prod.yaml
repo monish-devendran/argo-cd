@@ -19,3 +19,5 @@ spec:
       allowEmpty: false
     syncOptions:
       - Validate=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
